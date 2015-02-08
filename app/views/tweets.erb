@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+  <head>
+  	<link rel="stylesheet" type="text/css" href="css/style.css">
+    <title>Fwitter is the Bomb!</title>
+  </head>
+  <body> 
+  	<div class="title">
+  		<h1>Fwitter is the Bomb!</h1>
+  	</div>
+    <div class="container">
+    	<div class="tweet">
+    		<% @tweets.each do |tweet| %>
+    			<h1><%=tweet.user%> - <%= tweet.message %></h1>
+    		<% end %>
+    	</div>
+
+    	<form action="/tweets" method="POST">
+    		User: <input type="text" name="user">
+    		Message: <input type="text" name="message">
+    		<input type="submit">
+    	</form>	
+    </div>
+  </body>
+</html>
